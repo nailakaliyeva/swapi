@@ -18,6 +18,22 @@ export class Home extends React.Component {
 										</ul>
 									);
 								})}
+							{store.planets &&
+								store.planets.map((e, i) => {
+									return (
+										<ul key={i} className="list-group">
+											<li className="list-group-item">{e.name}</li>
+										</ul>
+									);
+								})}
+							{store.vehicles &&
+								store.vehicles.map((e, i) => {
+									return (
+										<ul key={i} className="list-group">
+											<li className="list-group-item">{e.name}</li>
+										</ul>
+									);
+								})}
 						</div>
 					);
 				}}

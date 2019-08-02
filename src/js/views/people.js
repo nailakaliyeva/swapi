@@ -12,18 +12,25 @@ export class People extends React.Component {
 						<div className="m-5">
 							<h1 className="text-center text-info">Peoples names</h1>
 							<ul className="list-group">
-								{store.people &&
-									store.people.map((e, i) => {
-										return (
-											<li key={i} className="list-group-item d-flex justify-content-between">
-												{e.name}
-												<i
-													className="far fa-star"
-													onClick={star => actions.addToFavoritePeople(star, e)}
-												/>
-											</li>
-										);
-									})}
+								{store.people.map((e, i) => {
+									return (
+										<li key={i} className="list-group-item d-flex justify-content-between">
+											{e.name}
+											<i
+												className="far fa-star"
+												//{() => {
+												//let obj = store.favorites.find(fav => fav.name === e.name);
+												//let color = "far fa-star";
+												//if (obj !== undefined) color = "far fa-star text-warning";
+												//console.log(color);
+												//return color;
+												// obj !== undefined ? "far fa-star text-warning" : "far fa-star";}
+												//	}
+												onClick={star => actions.addToFavoritePeople(star, e)}
+											/>
+										</li>
+									);
+								})}
 							</ul>
 						</div>
 					);

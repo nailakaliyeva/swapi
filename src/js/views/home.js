@@ -13,10 +13,9 @@ export class Home extends React.Component {
 							{store.people &&
 								store.people.map((e, i) => {
 									return (
-										<div key={i}>
-											<li>{e.name}</li>
-											<li>{e.age}</li>
-										</div>
+										<ul key={i} className="list-group">
+											<li className="list-group-item">{e.name}</li>
+										</ul>
 									);
 								})}
 						</div>

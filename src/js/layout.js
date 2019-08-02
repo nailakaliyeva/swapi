@@ -2,13 +2,12 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { People } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+import { People } from "./views/people";
+import { Planets } from "./views/planets";
+import { Vehicles } from "./views/vehicles";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
 
 //create your first component
 export class Layout extends React.Component {
@@ -21,9 +20,12 @@ export class Layout extends React.Component {
 			<div className="d-flex flex-column h-100">
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
+						<Navbar />
 						<Switch>
 							<Route exact path="/" component={People} />
-							<Route path="/single" component={Single} />
+							<Route path="/planets" component={Planets} />
+							<Route path="/vehicles" component={Vehicles} />
+
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 					</ScrollToTop>

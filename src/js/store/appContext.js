@@ -22,20 +22,6 @@ const injectContext = PassedComponent => {
 		}
 
 		componentDidMount() {
-			// fetch("https://swapi.co/api/people/")
-			// 	.then(response => response.json())
-			// 	.then(data => {
-			// 		console.log(data);
-			// 		this.setState({ store: { people: data } });
-			// 	});
-
-			// fetch("https://swapi.co/api/planets/")
-			// 	.then(response => response.json())
-			// 	.then(data => {
-			// 		console.log(data);
-			// 		this.setState({ store: { planets: data } });
-			// 	});
-
 			fetch("https://swapi.co/api/vehicles/")
 				.then(response => response.json())
 				.then(data => {

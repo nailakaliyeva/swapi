@@ -7,7 +7,7 @@ export class People extends React.Component {
 	render() {
 		return (
 			<Context.Consumer>
-				{({ store }) => {
+				{({ store, actions }) => {
 					return (
 						<div className="m-5">
 							<h1 className="text-center text-info">Peoples names</h1>
@@ -16,7 +16,11 @@ export class People extends React.Component {
 									store.people.map((e, i) => {
 										return (
 											<li key={i} className="list-group-item d-flex justify-content-between">
-												{e.name} <i className="far fa-star" />
+												{e.name}
+												<i
+													className="far fa-star"
+													onClick={star => actions.addToFavoritePeople(star, e)}
+												/>
 											</li>
 										);
 									})}

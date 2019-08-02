@@ -7,7 +7,7 @@ export class Vehicles extends React.Component {
 	render() {
 		return (
 			<Context.Consumer>
-				{({ store }) => {
+				{({ store, actions }) => {
 					return (
 						<div className="m-5">
 							<h1 className="text-center text-danger">Vehicles</h1>

@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { People } from "./views/people";
 import { Planets } from "./views/planets";
 import { Vehicles } from "./views/vehicles";
+import { FavoritePeople } from "./views/favoritePeople";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -25,6 +26,7 @@ export class Layout extends React.Component {
 							<Route exact path="/" component={People} />
 							<Route path="/planets" component={Planets} />
 							<Route path="/vehicles" component={Vehicles} />
+							<Route path="/favoritePeople" component={FavoritePeople} />
 
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>

@@ -5,8 +5,7 @@ const getState = ({ getStore, setStore }) => {
 			favorites: []
 		},
 		actions: {
-			addToFavoritePeople: (star, object) => {
-				star.target.style.color = "yellow";
+			addToFavoritePeople: object => {
 				let store = getStore();
 
 				let obj = store.favorites.find(whatever => whatever.name === object.name);
@@ -14,16 +13,22 @@ const getState = ({ getStore, setStore }) => {
 				if (obj === undefined) {
 					setStore({ favorites: store.favorites.concat(object) });
 				}
-
-				// let repeat = false;
-				// for (let i = 0; i < store.favorites.length; i++) {
-				// 	if (store.favorites[i].name === object.name) {
-				// 		repeat = true;
-				// 	}
-				// }
-
-				// if (repeat === false) setStore({ favorites: store.favorites.concat(object) }); //this works :)
+			},
+			deleteFromFav: index => {
+				let store = getStore();
+				let arr = store.favorites;
+				arr.splice(index, 1);
+				setStore({ favorites: arr });
 			}
+
+			// let repeat = false;
+			// for (let i = 0; i < store.favorites.length; i++) {
+			// 	if (store.favorites[i].name === object.name) {
+			// 		repeat = true;
+			// 	}
+			// }
+
+			// if (repeat === false) setStore({ favorites: store.favorites.concat(object) }); //this works :)
 		}
 	};
 };

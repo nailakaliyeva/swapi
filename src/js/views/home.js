@@ -3,7 +3,7 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 
-export class Home extends React.Component {
+export class People extends React.Component {
 	render() {
 		return (
 			<Context.Consumer>

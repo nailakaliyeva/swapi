@@ -15,8 +15,9 @@ export class Planets extends React.Component {
 								{store.planets &&
 									store.planets.map((e, i) => {
 										return (
-											<li key={i} className="list-group-item">
+											<li key={i} className="list-group-item d-flex justify-content-between">
 												{e.name}
+												<i className="far fa-star" />
 											</li>
 										);
 									})}

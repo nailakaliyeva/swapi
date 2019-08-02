@@ -15,8 +15,8 @@ export class People extends React.Component {
 								{store.people &&
 									store.people.map((e, i) => {
 										return (
-											<li key={i} className="list-group-item">
-												{e.name}
+											<li key={i} className="list-group-item d-flex justify-content-between">
+												{e.name} <i className="far fa-star" />
 											</li>
 										);
 									})}

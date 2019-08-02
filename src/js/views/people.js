@@ -18,7 +18,7 @@ export class People extends React.Component {
 									let tiger = store.favorites.find(fav => fav.name === e.name);
 									if (tiger !== undefined) {
 										color = "far fa-star text-warning";
-										func = () => actions.deleteFromFav(i);
+										func = () => actions.deleteFromFav(e);
 									}
 
 									//tiger !== undefined ? "far fa-star text-warning" : "far fa-star";}

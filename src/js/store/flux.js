@@ -7,18 +7,19 @@ const getState = ({ getStore, setStore }) => {
 		actions: {
 			addToFavoritePeople: object => {
 				let store = getStore();
-
 				let obj = store.favorites.find(whatever => whatever.name === object.name);
-
 				if (obj === undefined) {
 					setStore({ favorites: store.favorites.concat(object) });
 				}
 			},
-			deleteFromFav: index => {
+			deleteFromFav: object => {
 				let store = getStore();
 				let arr = store.favorites;
+				let index = store.favorites.findIndex(e => e.name === object.name);
 				arr.splice(index, 1);
 				setStore({ favorites: arr });
+				console.log(index);
+				store.favorites.forEach(e => console.log(e.name));
 			}
 
 			// let repeat = false;

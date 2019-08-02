@@ -9,31 +9,40 @@ export class Home extends React.Component {
 			<Context.Consumer>
 				{({ store }) => {
 					return (
-						<div>
-							{store.people &&
-								store.people.map((e, i) => {
-									return (
-										<ul key={i} className="list-group">
-											<li className="list-group-item">{e.name}</li>
-										</ul>
-									);
-								})}
-							{store.planets &&
-								store.planets.map((e, i) => {
-									return (
-										<ul key={i} className="list-group">
-											<li className="list-group-item">{e.name}</li>
-										</ul>
-									);
-								})}
-							{store.vehicles &&
-								store.vehicles.map((e, i) => {
-									return (
-										<ul key={i} className="list-group">
-											<li className="list-group-item">{e.name}</li>
-										</ul>
-									);
-								})}
+						<div className="m-5">
+							<h1 className="text-center text-info">Peoples names</h1>
+							<ul className="list-group">
+								{store.people &&
+									store.people.map((e, i) => {
+										return (
+											<li key={i} className="list-group-item">
+												{e.name}
+											</li>
+										);
+									})}
+							</ul>
+							<h1 className="text-center text-info">Planets</h1>
+							<ul className="list-group">
+								{store.planets &&
+									store.planets.map((e, i) => {
+										return (
+											<li key={i} className="list-group-item">
+												{e.name}
+											</li>
+										);
+									})}
+							</ul>
+							<h1 className="text-center text-info">Vehicles</h1>
+							<ul className="list-group">
+								{store.vehicles &&
+									store.vehicles.map((e, i) => {
+										return (
+											<li key={i} className="list-group-item">
+												{e.name}
+											</li>
+										);
+									})}
+							</ul>
 						</div>
 					);
 				}}

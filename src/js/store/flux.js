@@ -21,6 +21,13 @@ const getState = ({ getStore, setStore }) => {
 					setStore({ favePlanets: store.favePlanets.concat(object) });
 				}
 			},
+			addToFavoriteVehicles: object => {
+				let store = getStore();
+				let obj = store.faveVehicles.find(whatever => whatever.name === object.name);
+				if (obj === undefined) {
+					setStore({ faveVehicles: store.faveVehicles.concat(object) });
+				}
+			},
 			deleteFromFav: object => {
 				let store = getStore();
 				let arr = store.favorites;
@@ -36,6 +43,15 @@ const getState = ({ getStore, setStore }) => {
 				let index = store.favePlanets.findIndex(e => e.name === object.name);
 				arr.splice(index, 1);
 				setStore({ favePlanets: arr });
+				//	console.log(index);
+				//store.favePlanets.forEach(e => console.log(e.name));
+			},
+			deleteFromFaveVehicles: object => {
+				let store = getStore();
+				let arr = store.faveVehicles;
+				let index = store.faveVehicles.findIndex(e => e.name === object.name);
+				arr.splice(index, 1);
+				setStore({ faveVehicles: arr });
 				//	console.log(index);
 				//store.favePlanets.forEach(e => console.log(e.name));
 			}

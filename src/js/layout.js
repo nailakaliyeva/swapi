@@ -7,6 +7,7 @@ import { Planets } from "./views/planets";
 import { Vehicles } from "./views/vehicles";
 import { FavoritePeople } from "./views/favoritePeople";
 import { FavoritePlanets } from "./views/favoritePlanets";
+import { FavoriteVehicles } from "./views/favoriteVehicles";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -29,6 +30,7 @@ export class Layout extends React.Component {
 							<Route path="/vehicles" component={Vehicles} />
 							<Route path="/favoritePeople" component={FavoritePeople} />
 							<Route path="/favoritePlanets" component={FavoritePlanets} />
+							<Route path="/favoriteVehicles" component={FavoriteVehicles} />
 
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>

@@ -1,6 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 
 export class Vehicles extends React.Component {
@@ -14,10 +13,17 @@ export class Vehicles extends React.Component {
 							<ul className="list-group">
 								{store.vehicles &&
 									store.vehicles.map((e, i) => {
+										let func = () => actions.addToFavoriteVehicles(e);
+										let color = "far fa-star";
+										let tiger = store.faveVehicles.find(fav => fav.name === e.name);
+										if (tiger !== undefined) {
+											color = "far fa-star text-warning";
+											func = () => actions.deleteFromFaveVehicles(e);
+										}
 										return (
 											<li key={i} className="list-group-item d-flex justify-content-between">
 												{e.name}
-												<i className="far fa-star" />
+												<i className={color} onClick={func} />
 											</li>
 										);
 									})}

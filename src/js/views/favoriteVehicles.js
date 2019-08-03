@@ -9,7 +9,7 @@ export class FavoriteVehicles extends React.Component {
 				{({ store, actions }) => {
 					return (
 						<div className="m-5">
-							<h1 className="text-center text-success">Favorite Vehicles</h1>
+							<h1 className="text-center text-danger">Favorite Vehicles</h1>
 							<ul className="list-group">
 								{store.faveVehicles &&
 									store.faveVehicles.map((e, i) => {

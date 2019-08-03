@@ -9,7 +9,7 @@ export class FavoritePeople extends React.Component {
 				{({ store, actions }) => {
 					return (
 						<div className="m-5">
-							<h1 className="text-center text-success">Favorite People</h1>
+							<h1 className="text-center text-primary">Favorite People</h1>
 							<ul className="list-group">
 								{store.favorites &&
 									store.favorites.map((e, i) => {

@@ -9,13 +9,19 @@ export class FavoriteVehicles extends React.Component {
 				{({ store, actions }) => {
 					return (
 						<div className="m-5">
-							<h1 className="text-center text-danger">Favorite Vehicles</h1>
+							<h1 className="text-center text-warning">Favorite Vehicles</h1>
 							<ul className="list-group">
 								{store.faveVehicles &&
 									store.faveVehicles.map((e, i) => {
 										return (
 											<li key={i} className="list-group-item d-flex justify-content-between">
 												{e.name}
+												<button
+													type="button"
+													className="btn btn-danger"
+													onClick={() => actions.deleteFromFaveVehicles(e)}>
+													Remove from the list
+												</button>
 											</li>
 										);
 									})}

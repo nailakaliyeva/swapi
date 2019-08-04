@@ -12,7 +12,7 @@ export class Navbar extends React.Component {
 					<button className="btn btn-success">Planets</button>
 				</Link>
 				<Link to="/vehicles">
-					<button className="btn btn-danger">Vehicles</button>
+					<button className="btn btn-warning">Vehicles</button>
 				</Link>
 			</nav>
 		);

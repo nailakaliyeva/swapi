@@ -11,9 +11,9 @@ export class Vehicles extends React.Component {
 					return (
 						<div className="m-5">
 							<div className="d-flex justify-content-between">
-								<h1 className="text-danger mb-2">Vehicles</h1>
+								<h1 className="text-warning mb-2">Vehicles</h1>
 								<Link to="/favoriteVehicles">
-									<button className="btn btn-danger">Favorite Vehicles</button>
+									<button className="btn btn-warning">Favorite Vehicles</button>
 								</Link>{" "}
 							</div>
 							<ul className="list-group">

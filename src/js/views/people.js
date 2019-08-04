@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export class People extends React.Component {
 	render() {
@@ -9,7 +10,12 @@ export class People extends React.Component {
 				{({ store, actions }) => {
 					return (
 						<div className="m-5">
-							<h1 className="text-center text-info">Peoples names</h1>
+							<div>
+								<h1 className="text-center text-info">Peoples names</h1>
+								<Link to="/favoritePeople">
+									<button className="btn btn-primary">Favorite People</button>
+								</Link>{" "}
+							</div>
 							<ul className="list-group">
 								{store.people.map((e, i) => {
 									let func = () => actions.addToFavoritePeople(e);

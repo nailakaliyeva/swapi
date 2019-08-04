@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export class Vehicles extends React.Component {
 	render() {
@@ -9,7 +10,12 @@ export class Vehicles extends React.Component {
 				{({ store, actions }) => {
 					return (
 						<div className="m-5">
-							<h1 className="text-center text-danger">Vehicles</h1>
+							<div>
+								<h1 className="text-center text-danger">Vehicles</h1>
+								<Link to="/favoriteVehicles">
+									<button className="btn btn-danger">Favorite Vehicles</button>
+								</Link>{" "}
+							</div>
 							<ul className="list-group">
 								{store.vehicles &&
 									store.vehicles.map((e, i) => {

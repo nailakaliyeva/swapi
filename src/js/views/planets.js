@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export class Planets extends React.Component {
 	render() {
@@ -9,7 +10,12 @@ export class Planets extends React.Component {
 				{({ store, actions }) => {
 					return (
 						<div className="m-5">
-							<h1 className="text-center text-success">Planets</h1>
+							<div>
+								<h1 className="text-center text-success">Planets</h1>
+								<Link to="/favoritePlanets">
+									<button className="btn btn-success">Favorite Planets</button>
+								</Link>{" "}
+							</div>
 							<ul className="list-group">
 								{store.planets &&
 									store.planets.map((e, i) => {

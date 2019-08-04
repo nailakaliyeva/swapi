@@ -10,8 +10,8 @@ export class Planets extends React.Component {
 				{({ store, actions }) => {
 					return (
 						<div className="m-5">
-							<div>
-								<h1 className="text-center text-success">Planets</h1>
+							<div className="d-flex justify-content-between">
+								<h1 className="text-success mb-2">Planets</h1>
 								<Link to="/favoritePlanets">
 									<button className="btn btn-success">Favorite Planets</button>
 								</Link>{" "}

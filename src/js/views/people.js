@@ -10,8 +10,8 @@ export class People extends React.Component {
 				{({ store, actions }) => {
 					return (
 						<div className="m-5">
-							<div>
-								<h1 className="text-center text-info">Peoples names</h1>
+							<div className="d-flex justify-content-between">
+								<h1 className="text-info mb-2">Peoples names</h1>
 								<Link to="/favoritePeople">
 									<button className="btn btn-primary">Favorite People</button>
 								</Link>{" "}

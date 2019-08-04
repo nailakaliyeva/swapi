@@ -16,6 +16,12 @@ export class FavoritePeople extends React.Component {
 										return (
 											<li key={i} className="list-group-item d-flex justify-content-between">
 												{e.name}
+												<button
+													type="button"
+													className="btn btn-danger"
+													onClick={() => actions.deleteFromFav(e)}>
+													Remove from the list
+												</button>
 											</li>
 										);
 									})}

@@ -2,8 +2,16 @@ import React from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import { Popover } from "./popover";
 
 export class People extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			show: false
+		};
+	}
+
 	render() {
 		return (
 			<Context.Consumer>
@@ -17,6 +25,13 @@ export class People extends React.Component {
 								</Link>{" "}
 							</div>
 							<ul className="list-group">
+								{this.state.show ? (
+									<div>
+										<Popover data={this.state.show} />
+									</div>
+								) : (
+									""
+								)}
 								{store.people.map((e, i) => {
 									let func = () => actions.addToFavoritePeople(e);
 									let color = "far fa-star";
@@ -29,7 +44,12 @@ export class People extends React.Component {
 									//tiger !== undefined ? "far fa-star text-warning" : "far fa-star";}
 
 									return (
-										<li key={i} className="list-group-item d-flex justify-content-between">
+										<li
+											key={i}
+											className="list-group-item d-flex justify-content-between"
+											onClick={() => {
+												this.setState({ show: e });
+											}}>
 											<h5>{e.name}</h5>
 
 											<i className={color} onClick={func} />

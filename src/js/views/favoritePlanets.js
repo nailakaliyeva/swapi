@@ -15,7 +15,7 @@ export class FavoritePlanets extends React.Component {
 									store.favePlanets.map((e, i) => {
 										return (
 											<li key={i} className="list-group-item d-flex justify-content-between">
-												{e.name}
+												<h5>{e.name}</h5>
 												<button
 													type="button"
 													className="btn btn-danger"

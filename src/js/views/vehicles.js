@@ -28,7 +28,7 @@ export class Vehicles extends React.Component {
 										}
 										return (
 											<li key={i} className="list-group-item d-flex justify-content-between">
-												{e.name}
+												<h5>{e.name}</h5>
 												<i className={color} onClick={func} />
 											</li>
 										);
